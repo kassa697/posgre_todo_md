@@ -10,7 +10,7 @@ ID : データを識別
 タイトル : todoタイトル  
 説明 : todoの詳細  
 
-![Alt text](<スクリーンショット 2023-10-04 12.23.11.png>)
+![Alt text](<image/スクリーンショット 2023-10-04 12.23.11.png>)
 
 pgAdmin4でpsqlを使って準備をします。
 
@@ -46,7 +46,7 @@ CREATE TABLE memo (
 - flutterプロジェクトを作成します。
 
 
-<img src="スクリーンショット 2023-10-04 11.12.30.png" width="80%">
+<img src="image/スクリーンショット 2023-10-04 11.12.30.png" width="80%">
 
 プロジェクト名は好きな名前で結構です。
 
@@ -113,11 +113,11 @@ class MyApp extends StatelessWidget {
 そのまま22行目から下に続けてMyHomePageを作成していきます。
 「stf」と入力すると予測変換が出てきます。
 
-<img src="スクリーンショット 2023-10-04 11.32.01.png" width="50%">
+<img src="image/スクリーンショット 2023-10-04 11.32.01.png" width="50%">
 
 「stful」を選択すると雛形が生成されます。
 
-<img src="スクリーンショット 2023-10-04 11.33.02.png" width="50%">
+<img src="image/スクリーンショット 2023-10-04 11.33.02.png" width="50%">
 
 ここで「MyHomePage」と入力して下さい。
 以下の様になればOKです。
@@ -211,7 +211,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 一旦ビルドして以下の画像の様になればOKです。
 
-<img src="スクリーンショット 2023-10-04 12.45.26.png" width="50%">
+<img src="image/スクリーンショット 2023-10-04 12.45.26.png" width="50%">
 
 ではフローティングアクションボタンを押すとデータを追加するようにしたいので  
 一旦ボタンだけ配置します
@@ -219,7 +219,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 少しわかりづらいですが以下のところに挿入します。
 
-<img src="スクリーンショット 2023-10-04 12.53.41.png" width="50%">
+<img src="image/スクリーンショット 2023-10-04 12.53.41.png" width="50%">
 
 ```dart
       floatingActionButton: FloatingActionButton(
@@ -235,7 +235,7 @@ class _MyHomePageState extends State<MyHomePage> {
 実装イメージはフローティングアクションボタンを押すと  
 以下の様に入力フォームが下から出てくる様にします。  
 
-<img src="スクリーンショット 2023-10-04 13.03.07.png" width="50%">
+<img src="image/スクリーンショット 2023-10-04 13.03.07.png" width="50%">
 
 ```dart
 class _MyHomePageState extends State<MyHomePage> {
@@ -281,7 +281,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 以下の画像の様になればOKです。  
 
-<img src="スクリーンショット 2023-10-04 13.17.09.png" width="50%">
+<img src="image/スクリーンショット 2023-10-04 13.17.09.png" width="50%">
 
 しかしこれでは入力欄の昨日や何を入力するか分からないので  
 コードを補完していきます。
@@ -514,7 +514,7 @@ SELECT * FROM memo;
 もしエラーが出た場合は誤字などの恐れがあるのでエラー文をよくみて  
 もう一度確認する様にしましょう。
 
-<img src="スクリーンショット 2023-10-04 13.41.32.png" width="50%">
+<img src="image/スクリーンショット 2023-10-04 13.41.32.png" width="50%">
 
 ではアプリ側でSQLのデータを取得するコードを実装していきます。
 
@@ -592,7 +592,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 以下の様に表示されていればOKです。
 
-<img src="スクリーンショット 2023-10-04 13.54.49.png" width="50%">
+<img src="image/スクリーンショット 2023-10-04 13.54.49.png" width="50%">
 
 ここまでで取得と送信はできたので次は更新と削除機能を実装していきます。
 
@@ -752,7 +752,7 @@ _showForm関数の真下に以下のコードを挿入します。
 
 試しにアプリのゴミ箱マークをタップしてデータを全て削除しましょう。
 
-<img src="スクリーンショット 2023-10-04 14.47.41.png" width="50%">
+<img src="image/スクリーンショット 2023-10-04 14.47.41.png" width="50%">
 
 データがない時はアプリがどの様な状態かわかりません。
 
