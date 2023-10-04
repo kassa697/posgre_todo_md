@@ -219,7 +219,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 少しわかりづらいですが以下のところに挿入します。
 
-<img src="image/スクリーンショット 2023-10-04 12.53.41.png" width="50%">
+<img src="image/スクリーンショット 2023-10-04 16.44.00.png" width="50%">
 
 ```dart
       floatingActionButton: FloatingActionButton(
@@ -491,7 +491,11 @@ const String tableName = 'memo';
 
 赤線のところで「option + エンター」でインポートして下さい。
 
-一旦SQL接続確認をします。
+赤線が消えればOKです。
+
+では「main.dart」に戻って一旦SQL接続確認をします。
+
+_showForm関数の中にあるElevatedButtonを以下の様に書き換えます。
 
 ```diff
 -  ElevatedButton(onPressed: () {}, child: Text('新規追加'))
@@ -679,8 +683,8 @@ _showForm関数の真下に以下のコードを挿入します。
 
 ```diff
   Future<void> _showForm(int? id) async {
-+    _titleController.text = "";
-+    _descriptionController.text = "";
++    _titleController.clear();
++    _descriptionController.clear();
     if (id != null) {
       final existingTodos = _todos.firstWhere((todo) => todo['id'] == id);
       _titleController.text = existingTodos['title'];
@@ -719,7 +723,7 @@ _showForm関数の真下に以下のコードを挿入します。
 
   ElevatedButton(onPressed: () async {
 -    Postgres.insert(title: _titleController.text, description: _descriptionController.text);
-  }, child: Text('新規追加'))
+  }, child: Text(id == null ? '新規追加' : '更新'))
 ```
 
 以下が条件式になります。
