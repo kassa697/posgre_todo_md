@@ -144,7 +144,7 @@ SELECT * FROM human;
 
 以下のように出力されていれば完了です。  
 
-<img src="スクリーンショット 2023-10-10 15.21.34.png" width="50%">
+<img src="image/スクリーンショット 2023-10-10 15.21.34.png" width="50%">
 
 ## PostgreSQLの操作は一旦ここまで
 

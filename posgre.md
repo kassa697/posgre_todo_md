@@ -22,9 +22,7 @@ CREATE DATABASE todo;
 
 作成したデータベースへ接続
 
-```sql
-\c todo
-```
+<img src="image/スクリーンショット 2023-10-10 15.33.44.png" width="50%">
 
 テーブルの作成
 
