@@ -8,12 +8,12 @@
 
 プロジェクトを作成します。
 
-PostgreSQLとの接続の確認をするだけなので以下に雛形のコードをコピーして`main.dart`へ貼り付けてください。
+PostgreSQLとの接続の確認をするだけなのでプロジェクト作成後のコードは全て消してから  
+以下の雛形コードをコピーして`main.dart`へ貼り付けてください。
 
 このコードで主に編集するのは60行目付近にある  
 ElevatedButtonのonPressedプロパティの{}の中だけです。  
-お手数ですが１ページ目のコードをコピーして貼り付け後、  
-続けて２ページ目のコードも続いてコピペして下さい
+
 ```dart
 import 'package:flutter/material.dart';
 
@@ -118,8 +118,7 @@ SELECT * FROM human;
 
 <img src="image/スクリーンショット 2023-09-14 11.57.11.png" width="50%">
 
-
-そこのターミナルに以下のコマンドを入力して下さい。
+ターミナルに以下のコマンドを入力して下さい。
 
 ```bash
 flutter pub add postgres
