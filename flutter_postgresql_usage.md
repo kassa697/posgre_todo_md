@@ -100,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 PostgreSQLの使い方の説明のところで以下のテーブルを作成したかと思います。
 
-前回講義で作成した「test_db」を選択して「Query Tool」で以下のコードを実行して下さい。
+前回の講義と同様、「Query Tool」で以下のコードを実行して下さい。
 
 ```sql
 SELECT * FROM human;
@@ -214,8 +214,10 @@ postgres　→ これは追加しようとしているパッケージの名前�
 <img src="image/スクリーンショット 2023-09-20 10.56.17.png" width="50%">
 
 ```dart
+// Android上のPostgreSQLConnectionの赤線箇所で「option + Enter」
 final connection = PostgreSQLConnection(
 ```
+
 PostgreSQLConnectionの所をクリックしてから
 「option」＋「Enter（Return）キー」を押します。
 
@@ -259,7 +261,8 @@ PostgreSQLConnectionの所をクリックしてから
 一旦接続できているか確認する為にビルドします。
 
 ここで注意点ですがAndroid Studioでビルドする時は「iPhone」のエミュレーターを選択して下さい。
-なぜかAndroid端末を選択するとエラーが出ます（原因調査中）
+
+環境などによってはAndroid端末を選択するとエラーが出る可能性があります。
 
 ビルドが終わればテキストフィールドに文字を入力して送信します。
 
