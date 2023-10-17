@@ -38,10 +38,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-```
-<div style="page-break-before:always"></div>
-
-```dart
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
   @override
@@ -92,26 +88,25 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 ```
-<div style="page-break-before:always"></div>
 
 コピーができたら一旦ビルドをしてみましょう。  
 以下のような画像になればここまではOKです。
 
-<img src="スクリーンショット 2023-09-20 11.14.53.png" width="38%">
+<img src="image/スクリーンショット 2023-09-20 11.14.53.png" width="38%">
 
 ## ②PostgreSQL用のパッケージ追加
 
 一旦、pgAdmin4を開いてください。
 
 PostgreSQLの使い方の説明のところで以下のテーブルを作成したかと思います。
-Admin4のpsql上で以下を入力して
+前回の講義と同様、「Query Tool」で以下のコードを実行して下さい。
 
 ```sql
 SELECT * FROM human;
 ```
 
 以下のような出力がされていればOKです。
-ここにflutterのテキストフィールドに入力した文字を追加するアプリを作っていきます。
+ここからflutterのテキストフィールドに入力した文字を追加するアプリを作っていきます。
 
 ```bash
  id | first_name | last_name 
@@ -120,13 +115,11 @@ SELECT * FROM human;
 (1 row)
 ```
 
-もしまだの方がいれば「PostgreSQLの使い方」に戻ってマニュアルを進めてください。
-
 ではflutterで使えるようにしていくのでAndroid Studioを開いてください。
 
 先ほど作成したプロジェクトを開いてAndroid Studioのターミナルを開きます。
 
-<img src="スクリーンショット 2023-09-14 11.57.11.png" width="50%">
+<img src="image/スクリーンショット 2023-09-14 11.57.11.png" width="50%">
 
 
 そこのターミナルに以下のコマンドを入力して下さい。
@@ -161,8 +154,6 @@ postgres　→ これは追加しようとしているパッケージの名前�
 参考にして少し改変したコードが以下になります。
 
 60行目付近の以下の所に以下のコードを貼り付けて下さい。 
-
-<div style="page-break-before:always"></div>
 
 ```dart
               ElevatedButton(
@@ -215,11 +206,11 @@ postgres　→ これは追加しようとしているパッケージの名前�
 コピペの時に人によっては表示崩れが起きるかもしれません。  
 
 もし以下の画像のようになっていれば  
-<img src="スクリーンショット 2023-09-20 10.56.03.png" width="50%">
+<img src="image/スクリーンショット 2023-09-20 10.56.03.png" width="50%">
 
 下のように改行を無くすようにお願いします。  
 
-<img src="スクリーンショット 2023-09-20 10.56.17.png" width="50%">
+<img src="image/スクリーンショット 2023-09-20 10.56.17.png" width="50%">
 
 ```dart
 final connection = PostgreSQLConnection(
@@ -232,7 +223,7 @@ PostgreSQLConnectionの所をクリックしてから
 これは先ほど「flutter pub add postgres」でインストールした
 パッケージを読み込むために行っています。
 
-<img src="スクリーンショット 2023-09-14 13.16.23.png" width="50%">
+<img src="image/スクリーンショット 2023-09-14 13.16.23.png" width="50%">
 
 まだ他にも「await」の所でエラーが出ていると思います。
 
@@ -271,7 +262,7 @@ PostgreSQLConnectionの所をクリックしてから
 
 ビルドが終わればテキストフィールドに文字を入力して送信します。
 
-<img src="スクリーンショット 2023-09-20 11.16.36.png" width="50%">
+<img src="image/スクリーンショット 2023-09-20 11.16.36.png" width="50%">
 
 サンプルコードの中にデータが送信すれば「success!」 と 
 出力するようにしているのでConsoleに出力されていれば成功です。
@@ -363,7 +354,7 @@ INSERT INTO human (first_name, last_name) VALUES (@first_name, @last_name)
 @first_name および @last_name はプレースホルダーであり、後で置換されます。
 
 `substitutionValues`   
-このパラメータは、プレースホルダー @first_name と @last_name の値を置換するためのデータを指定します。  
+このパラメータは、プレースホルダーで@first_name と @last_name の値を置換するためのデータを指定します。  
 具体的な値は _firstNameController.text と _lastNameController.text から取得されます。
 
 ```dart
@@ -375,8 +366,8 @@ INSERT INTO human (first_name, last_name) VALUES (@first_name, @last_name)
 ```
 
 insertResultには変動のあった行数の数がリターンされています。  
-よくわからないと思うのでpostgresパッケージのコードを見てみましょう。 
-以下のコードはパッケージのコードなので今は理解する必要ありません。 
+よくわからないと思うのでpostgresパッケージのコードを見てみます。 
+以下のコードはパッケージのコードなので今は理解する必要ありませんので見るだけで結構です。 
 
 ```dart
  @override
@@ -417,8 +408,6 @@ try {
 ```
 
 ここまでがflutterにてPostgreSQLへデータを送信する流れになります。
-
-<div style="page-break-before:always"></div>
 
 ## ⑤PostgreSQLのデータを取得
 
@@ -506,6 +495,7 @@ flutter: [[5, 太郎, 大発], [6, hanako, daihatsu], [7, hanako, daihatsu]]
 ```dart
 print(results[0]);
 ```
+
 を実行すると  
 `[5, 太郎, 大発]`が出力されます。
 
@@ -521,8 +511,6 @@ for (final row in results) {
 ```
 
 変数の「row」にはresultsが持つ`[5, 太郎, 大発]`などのデータが入っています。
-
-<div style="page-break-before:always"></div>
 
 ```dart
   final id = row[0];
