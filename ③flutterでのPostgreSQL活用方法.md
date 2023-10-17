@@ -107,14 +107,10 @@ SELECT * FROM human;
 ```
 
 以下のような出力がされていればOKです。
-ここからflutterのテキストフィールドに入力した文字を追加するアプリを作っていきます。
 
-```bash
- id | first_name | last_name 
-----+------------+-----------
-  1 | 大発       | 太郎
-(1 row)
-```
+<img src="スクリーンショット 2023-10-17 13.34.47.png" width="50%">
+
+ここからflutterのテキストフィールドに入力した文字を追加するアプリを作っていきます。
 
 ではflutterで使えるようにしていくのでAndroid Studioを開いてください。
 
@@ -213,10 +209,14 @@ postgres　→ これは追加しようとしているパッケージの名前�
 
 <img src="image/スクリーンショット 2023-09-20 10.56.17.png" width="50%">
 
+以下のコードの「PostgreSQLConnection」に赤線があるかと思います。
+
 ```dart
 final connection = PostgreSQLConnection(
 ```
+
 PostgreSQLConnectionの所をクリックしてから
+
 「option」＋「Enter（Return）キー」を押します。
 
 すると以下のような画像のようにimportをする画面が出るのでクリックで選択します。
@@ -259,6 +259,7 @@ PostgreSQLConnectionの所をクリックしてから
 一旦接続できているか確認する為にビルドします。
 
 ここで注意点ですがAndroid Studioでビルドする時は「iPhone」のエミュレーターを選択して下さい。
+
 なぜかAndroid端末を選択するとエラーが出ます（原因調査中）
 
 ビルドが終わればテキストフィールドに文字を入力して送信します。
